@@ -19,7 +19,7 @@ from evolution import ERAS, STRIP, STRIP_LABELS  # noqa: E402
 SITE_NAME = "SeaBrick Society"
 TAGLINE = "Floating infrastructure for a changing coast"
 PREVIEW_BAND = "Local design preview · not published · journal articles are drafts for review"
-CONTACT_EMAIL = "info@seabrick.com"  # placeholder: confirm the public inbox before publishing
+CONTACT_EMAIL = "john@seabrick.com"
 CITY = "Vancouver, British Columbia, Canada"
 
 NAV = [
@@ -200,7 +200,7 @@ def index():
       <p class="lead">SeaBrick Society was incorporated under the Canada Not-for-profit Corporations Act in February 2022. It holds the research direction, the public record and the standards work. It does not sell products, take investment or pay dividends.</p>
       <div class="btn-row"><a class="btn primary" href="society.html">About the Society</a><a class="btn ghost" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.35)" href="contact.html">Work with us</a></div>
     </div>
-    <figure class="figure"><img src="assets/img/party-john-kid.webp" alt="An adult and a child holding up assemblies of model bricks" loading="lazy"><figcaption style="color:#9DB8CC">The June 2026 SeaBrick party. Model bricks of an earlier generation.</figcaption></figure>
+    <figure class="figure"><img src="assets/img/party-tower.webp" alt="Model bricks assembled at the June 2026 SeaBrick party" loading="lazy"><figcaption style="color:#9DB8CC">The June 2026 SeaBrick party. Model bricks of an earlier generation.</figcaption></figure>
   </div>
 </section>
 """
@@ -428,7 +428,7 @@ def lab_page():
 def evolution():
     eras = ""
     for era in ERAS:
-        pics = "".join(f'<figure><img src="assets/evolution/{lid.replace("jewel", "brick")}.webp" alt="{html.escape(cap)}" loading="lazy"><figcaption>{cap}</figcaption></figure>' for lid, cap, cam in era["items"])
+        pics = "".join(f'<figure><img src="assets/evolution/{lid.replace("jewel", "brick")}.webp" alt="{html.escape(cap)}" loading="lazy"><figcaption>{cap}</figcaption></figure>' for lid, cap, cam in era["items"]) if era.get("public", True) else ""
         eras += (f'<article class="era" id="{era["id"]}"><div><div class="when">{era["when"]}</div><h3>{era["title"]}</h3><p>{era["text"]}</p>'
                  f'<p class="people">{era["people"]}</p></div>' + (f'<div class="pics">{pics}</div>' if pics else '<div class="pics empty"><p class="small muted">{era.get("note", "No brick design files from this year; the work was in moulds and hand-cast prototypes.")}</p></div>') + '</article>')
     body = f"""
@@ -441,7 +441,7 @@ def evolution():
 <section class="band" id="shape">
   <div class="wrap">
     <div class="part-head"><span class="part">Part 1</span><h2>Geometry and design, 2022 to 2026</h2></div>
-    <figure class="figure" style="margin-bottom:36px"><img src="assets/evolution/strip.webp" alt="Eight brick designs in a row, from the first square of January 2022 to the final SeaBrick of 2026" loading="lazy"><figcaption>Eight of the generations, to a common scale on the page but not to each other. Each is rendered from its design file.</figcaption></figure>
+    <figure class="figure" style="margin-bottom:36px"><img src="assets/evolution/strip.webp" alt="Four brick designs in a row, from the first square of January 2022 to the final SeaBrick of 2026" loading="lazy"><figcaption>Four of the generations, to a common scale on the page but not to each other. Each is rendered from its design file.</figcaption></figure>
     <div class="eras">{eras}</div>
     <p class="small muted" style="margin-top:20px">Renders are made from the project's archived STEP, STL and 3MF files, in the orientation of the original file, with a neutral material. Early files were drawn to be printed at a fifth to a sixteenth of full size. Design files are not distributed; the connection features visible in historical renders have been superseded by the final design.</p>
   </div>
@@ -583,9 +583,8 @@ def society():
       <p>The articles of incorporation also provide that the Society is carried on without the purpose of gain for its members, that any profits are used to further its purposes, that directors serve without remuneration, and that on dissolution any remaining property is distributed to qualified donees.</p>
       <h2 id="governance">Governance</h2>
       <p>The Society has one class of members, each entitled to notice of, attendance at and a vote at members' meetings. It is governed by a board of between one and ten directors, elected by the members, who serve without pay. Its financial year ends on 31 December and it files annual returns with Corporations Canada.</p>
-      <p>Directors as recorded in the Society's most recent corporate profile: John Richardson (chair and founder), Tarah Stafford, Ben West.</p>
       <h2>Relationship to other organisations</h2>
-      <p>Commercial development of SeaBrick, including early fundraising, manufacturing trials and the kelp supply chain, has been carried by Kelp Island Inc., a related company formed in 2021. Research on mineral-foam manufacturing is being pursued with partners formed for that purpose. The Society's role in each case is the same: to hold the standard and the public research record, and to make sure what is learned is available to anyone who wants to build with the system.</p>
+      <p>Commercial development of SeaBrick, including early fundraising, manufacturing trials and the kelp supply chain, has been carried by Kelp Island Inc., a related company formed in 2021. BioLith is the Society's commercial partner for production of SeaBrick and for other uses of the mineral-foam and fibre material now in development. The Society's role in each case is the same: to hold the standard and the public research record, and to make sure what is learned is available to anyone who wants to build with the system.</p>
       <div class="note blue"><strong>Not a registered charity.</strong> SeaBrick Society is a not-for-profit corporation, not a registered charity under the Income Tax Act. It does not issue charitable donation receipts, does not sell shares or memberships with financial returns, and does not pay dividends.</div>
     </div>
     <div>

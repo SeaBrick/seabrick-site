@@ -33,7 +33,7 @@ ERAS = [
          text="When the UBC results showed the kelp composite was about as dense as water, the brick had to become hollow to float well. Through 2023 the work moved to moulds rather than bricks, and to plaster prototypes cast by hand to try the locking system of that generation, a set of bumps and tongues. The 3D scans made of those prototypes in September 2023 survive, but no brick CAD was drawn that year: the design moved on through the mould.",
          people="Moulds: Rico Jay Beringuela. Composite: UBC BioProducts Institute. Prototypes: SeaBrick.",
          items=[]),
-    dict(id="2024-hingelock", when="October 2023 to October 2024", title="The hinge-lock",
+    dict(id="2024-hingelock", public=False, note="Renders of this generation are not published while the design is under review. The text describes it.", when="October 2023 to October 2024", title="The hinge-lock",
          text="The bump-and-tongue system was superseded in October 2023 by the hinge-lock, in which bricks join and separate with a rotating motion instead of brute force. Brady Kirk scanned and printed the physical prototypes; Xiaoyuan Geng modelled the first versions in animation software; in August and September 2024 Rico rebuilt the design in SolidWorks as a square and a triangle, each printed as top and bottom halves at an eighth and a sixteenth of full size, with three candidate plug designs. The hinge-lock was declared final for patent purposes in September 2024.",
          people="3D printing and scanning: Brady Kirk. Modelling: Xiaoyuan Geng, Rico Jay Beringuela. Printing: 3DSMITH.",
          items=[("seabrickv09", "Hinge-lock v09, animation model, August 2024", dict(up="z", az=35, el=30)),
@@ -43,7 +43,7 @@ ERAS = [
                 ("whole-triangle-2", "Triangle, 11 September 2024", dict(up="y", az=35, el=30)),
                 ("twist-and-flex-09-20-2024", "Twist-and-flex plug, 20 September 2024", dict(up="z", az=35, el=30)),
                 ("size-4-top-seabrick-2", "Size 4 top half, October 2024", dict(up="z", az=35, el=30))]),
-    dict(id="2025-component", when="January to June 2025", title="The two-half component brick",
+    dict(id="2025-component", public=False, note="Renders of this generation are not published while the design is under review. The text describes it.", when="January to June 2025", title="The two-half component brick",
          text="To solve the mould problem, Zachary Huser redesigned the brick as two moulded halves that assemble into one unit, delivered in January 2025 with a two-degree draft so the halves would release. Brady Kirk printed them at full size in February, and an eight-inch brick was float-tested. In May and June the hinge-lock itself was rebuilt in SolidWorks, the first time the project's own CAD was in-house.",
          people="Design: Zachary Huser. Printing: Brady Kirk. SolidWorks: SeaBrick.",
          items=[("brick-cad-modified", "Component brick, January 2025", dict(up="y", az=35, el=30)),
@@ -51,7 +51,7 @@ ERAS = [
                 ("brick-cad-modified-lower", "Lower half", dict(up="y", az=35, el=30)),
                 ("brick-cad-feb-11-full-brick", "Full brick as printed, February 2025", dict(up="y", az=35, el=30)),
                 ("hinge-lock-june23", "Hinge-lock rebuilt in SolidWorks, June 2025", dict(up="y", az=35, el=30))]),
-    dict(id="2025-puzzle", when="August 2025 to January 2026", title="Puzzle bricks at one centimetre",
+    dict(id="2025-puzzle", public=False, note="Renders of this generation are not published while the design is under review. The text describes it.", when="August 2025 to January 2026", title="Puzzle bricks at one centimetre",
          text="With the component idea proven, the brick shrank to a one-centimetre toy so that whole structures could be built and held in the hand. The \"puzzlebrick\" series ran to eighteen versions in the autumn of 2025, then became a family: hexagon, trapezoid, rhombus and triangle, each in single, double and triple heights, with yokes to tie them together. A provisional patent on the component design was filed on 9 December 2025.",
          people="Design and printing: SeaBrick, with Brady Kirk.",
          items=[("puzzlebrick-v11", "Puzzlebrick v11, September 2025", dict(up="z", az=35, el=30)),
@@ -61,7 +61,7 @@ ERAS = [
                 ("seabrick-1cm-trapz-2f-single", "Trapezoid with two flat faces", dict(up="y", az=35, el=30)),
                 ("seabrick-1225-hex", "Hexagon, 25 December 2025", dict(up="y", az=35, el=30)),
                 ("singleyoke-1225", "Single yoke", dict(up="y", az=35, el=30))]),
-    dict(id="2026-toys", when="February to June 2026", title="A thousand toy bricks in fifty types",
+    dict(id="2026-toys", public=False, note="Renders of this generation are not published while the design is under review. The text describes it.", when="February to June 2026", title="A thousand toy bricks in fifty types",
          text="From February 2026 the toy family grew into a kit: hexagons, rhombs, trapezoids, triangles, rectangles, huts and tents, in one, two and three heights; sloped and clad pieces for roofs and walls; corner and T-joints; stud-and-tube cladding so the kit could meet other toy systems. About a thousand bricks were printed, and on 13 June 2026 friends and advisors spent an afternoon building with them to choose the first brick set.",
          people="Design and printing: SeaBrick.",
          items=[("single-hexbrick", "Single hexagon, February 2026", dict(up="y", az=35, el=30)),
@@ -87,6 +87,5 @@ ERAS = [
 ]
 
 # the ids that make up the summary strip, in order
-STRIP = ["seabricks-square", "seabrick-v7-june-21-2022", "hexagon-brick-4", "whole-square-2",
-         "brick-cad-modified", "puzzlebrick-v-toy", "single-hexbrick", "smoothed-jewel-6-locks"]
-STRIP_LABELS = ["Jan 2022", "Jun 2022", "Nov 2022", "Sep 2024", "Jan 2025", "Oct 2025", "Feb 2026", "2026 final"]
+STRIP = ["seabricks-square", "seabrick-v7-june-21-2022", "hexagon-brick-4", "smoothed-jewel-6-locks"]
+STRIP_LABELS = ["Jan 2022", "Jun 2022", "Nov 2022", "2026 final"]

@@ -33,7 +33,6 @@ dist/assets/evolution/rhomb-l-clad.webp
 dist/assets/evolution/trapz-slope.webp
 dist/assets/evolution/double-hexbrick.webp
 dist/assets/evolution/left-t-joint.webp
-dist/assets/evolution/strip.webp
 
 # Local noise
 __pycache__/
