@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" width="760" height="200" role="img"><defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8FB8CF"/></marker></defs>
+<rect x="40" y="60" width="200" height="110" rx="14" fill="#fff" stroke="#D3E0E7" stroke-width="1"/>
+<rect x="40" y="60" width="200" height="8" rx="4" fill="#7FA36A"/>
+<text x="58" y="100" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="11" font-weight="650" fill="#2F8A7B" text-anchor="start" letter-spacing="0.08em">2021–23</text>
+<text x="58" y="126" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="15" font-weight="650" fill="#0A3358" text-anchor="start" letter-spacing="0em">Kelp fibre composite</text>
+<text x="58" y="150" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="start" letter-spacing="0em">research stage</text>
+<path d="M246,115 l26,0" stroke="#8FB8CF" stroke-width="1.5" marker-end="url(#arr2)"/>
+<rect x="280" y="60" width="200" height="110" rx="14" fill="#fff" stroke="#D3E0E7" stroke-width="1"/>
+<rect x="280" y="60" width="200" height="8" rx="4" fill="#C8A96A"/>
+<text x="298" y="100" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="11" font-weight="650" fill="#2F8A7B" text-anchor="start" letter-spacing="0.08em">2025</text>
+<text x="298" y="126" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="15" font-weight="650" fill="#0A3358" text-anchor="start" letter-spacing="0em">Flax and hemp fibre</text>
+<text x="298" y="150" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="start" letter-spacing="0em">research stage</text>
+<path d="M486,115 l26,0" stroke="#8FB8CF" stroke-width="1.5" marker-end="url(#arr2)"/>
+<rect x="520" y="60" width="200" height="110" rx="14" fill="#fff" stroke="#D3E0E7" stroke-width="1"/>
+<rect x="520" y="60" width="200" height="8" rx="4" fill="#52B09F"/>
+<text x="538" y="100" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="11" font-weight="650" fill="#2F8A7B" text-anchor="start" letter-spacing="0.08em">2026 →</text>
+<text x="538" y="126" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="15" font-weight="650" fill="#0A3358" text-anchor="start" letter-spacing="0em">Mineral foam + fibre</text>
+<text x="538" y="150" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="start" letter-spacing="0em">current direction</text>
+<text x="40" y="36" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#2F8A7B" text-anchor="start" letter-spacing="0.08em">MATERIAL STRATEGY OVER TIME</text></svg>

@@ -1,0 +1,43 @@
+# Never commit these (SeaBrick geometry privacy policy, section 11)
+# (../brick-library and ../renders live outside this repo and must stay there)
+REVIEW.md
+
+# src/stories.py carries internal source notes (document and email ids); keep it local until those move out
+src/stories.py
+
+# Historical evolution renders, 2024 to 2026: awaiting John's privacy decision (REVIEW.md section 3)
+dist/assets/evolution/seabrickv09.webp
+dist/assets/evolution/new-sea-brick-august-28-2024.webp
+dist/assets/evolution/whole-square-2.webp
+dist/assets/evolution/top-square-2.webp
+dist/assets/evolution/whole-triangle-2.webp
+dist/assets/evolution/twist-and-flex-09-20-2024.webp
+dist/assets/evolution/size-4-top-seabrick-2.webp
+dist/assets/evolution/brick-cad-modified.webp
+dist/assets/evolution/brick-cad-modified-upper.webp
+dist/assets/evolution/brick-cad-modified-lower.webp
+dist/assets/evolution/brick-cad-feb-11-full-brick.webp
+dist/assets/evolution/hinge-lock-june23.webp
+dist/assets/evolution/puzzlebrick-v11.webp
+dist/assets/evolution/puzzlebrick-v14.webp
+dist/assets/evolution/puzzlebrick-v-toy.webp
+dist/assets/evolution/seabrick-1cm-6face-single.webp
+dist/assets/evolution/seabrick-1cm-trapz-2f-single.webp
+dist/assets/evolution/seabrick-1225-hex.webp
+dist/assets/evolution/singleyoke-1225.webp
+dist/assets/evolution/single-hexbrick.webp
+dist/assets/evolution/single-rhomb.webp
+dist/assets/evolution/single-tri-brick.webp
+dist/assets/evolution/single-hut-brick.webp
+dist/assets/evolution/rhomb-l-clad.webp
+dist/assets/evolution/trapz-slope.webp
+dist/assets/evolution/double-hexbrick.webp
+dist/assets/evolution/left-t-joint.webp
+dist/assets/evolution/strip.webp
+
+# Local noise
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db

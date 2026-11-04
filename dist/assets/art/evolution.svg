@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" width="760" height="240" role="img"><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8FB8CF"/></marker></defs>
+<polygon points="110.01,125.50 79.53,143.10 79.53,136.50 110.01,118.90" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9"/>
+<polygon points="29.99,114.50 79.53,143.10 79.53,136.50 29.99,107.90" fill="#C2B59F" stroke="#6B5F4F" stroke-width="0.9"/>
+<polygon points="60.47,90.30 110.01,118.90 79.53,136.50 29.99,107.90" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9"/>
+<text x="70" y="190" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="12" font-weight="650" fill="#2F8A7B" text-anchor="middle" letter-spacing="0.08em">2021</text>
+<text x="70" y="208" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">compressed kelp</text>
+<text x="70" y="223" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">slab</text>
+<path d="M118,110 l18,0" stroke="#8FB8CF" stroke-width="1.5" marker-end="url(#arr)"/>
+<polygon points="168.95,117.80 146.08,131.00 146.08,120.00 168.95,106.80" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9"/>
+<polygon points="146.08,131.00 123.22,117.80 123.22,106.80 146.08,120.00" fill="#C2B59F" stroke="#6B5F4F" stroke-width="0.9"/>
+<polygon points="146.08,93.60 168.95,106.80 146.08,120.00 123.22,106.80" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9"/>
+<polygon points="254.55,123.22 218.48,128.80 218.48,117.80 254.55,112.22" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9"/>
+<polygon points="218.48,117.80 228.15,96.98 254.55,112.22" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9"/>
+<polygon points="203.24,133.20 182.42,136.42 182.42,125.42 203.24,122.20" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="182.42,136.42 167.18,127.62 167.18,116.62 182.42,125.42" fill="#C2B59F" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="208.82,121.18 203.24,133.20 203.24,122.20 208.82,110.18" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="203.24,122.20 182.42,125.42 167.18,116.62 172.76,104.60 193.58,101.38 208.82,110.18" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<text x="188" y="190" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="12" font-weight="650" fill="#2F8A7B" text-anchor="middle" letter-spacing="0.08em">2022</text>
+<text x="188" y="208" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">square ·</text>
+<text x="188" y="223" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">triangle · hexagon family</text>
+<path d="M236,110 l18,0" stroke="#8FB8CF" stroke-width="1.5" marker-end="url(#arr)"/>
+<polygon points="325.05,131.00 299.03,135.03 299.03,118.53 325.05,114.50" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="299.03,135.03 279.97,124.03 279.97,107.53 299.03,118.53" fill="#C2B59F" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="332.03,115.97 325.05,131.00 325.05,114.50 332.03,99.47" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="325.05,114.50 299.03,118.53 279.97,107.53 286.95,92.50 312.97,88.47 332.03,99.47" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="316.48,109.55 302.16,111.76 291.69,105.71 295.52,97.45 309.84,95.24 320.31,101.29" fill="none" stroke="#6B5F4F" stroke-width="0.8" stroke-dasharray="3 2"/>
+<text x="306" y="190" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="12" font-weight="650" fill="#2F8A7B" text-anchor="middle" letter-spacing="0.08em">2022–23</text>
+<text x="306" y="208" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">hollow-core brick</text>
+<path d="M354,110 l18,0" stroke="#8FB8CF" stroke-width="1.5" marker-end="url(#arr)"/>
+<polygon points="443.05,131.00 417.03,135.03 417.03,118.53 443.05,114.50" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="417.03,135.03 397.97,124.03 397.97,107.53 417.03,118.53" fill="#C2B59F" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="450.03,115.97 443.05,131.00 443.05,114.50 450.03,99.47" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="443.05,114.50 417.03,118.53 397.97,107.53 404.95,92.50 430.97,88.47 450.03,99.47" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<text x="424" y="190" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="12" font-weight="650" fill="#2F8A7B" text-anchor="middle" letter-spacing="0.08em">2023–24</text>
+<text x="424" y="208" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">hinge-lock concept</text>
+<path d="M472,110 l18,0" stroke="#8FB8CF" stroke-width="1.5" marker-end="url(#arr)"/>
+<polygon points="561.05,131.00 535.03,135.03 535.03,126.78 561.05,122.75" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="535.03,135.03 515.97,124.03 515.97,115.78 535.03,126.78" fill="#C2B59F" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="568.03,115.97 561.05,131.00 561.05,122.75 568.03,107.72" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="561.05,122.75 535.03,126.78 515.97,115.78 522.95,100.75 548.97,96.72 568.03,107.72" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="561.05,112.85 535.03,116.88 535.03,108.63 561.05,104.60" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="535.03,116.88 515.97,105.88 515.97,97.63 535.03,108.63" fill="#C2B59F" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="568.03,97.82 561.05,112.85 561.05,104.60 568.03,89.57" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="561.05,104.60 535.03,108.63 515.97,97.63 522.95,82.60 548.97,78.57 568.03,89.57" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<text x="542" y="190" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="12" font-weight="650" fill="#2F8A7B" text-anchor="middle" letter-spacing="0.08em">2025</text>
+<text x="542" y="208" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">component brick</text>
+<text x="542" y="223" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">(moulded parts)</text>
+<path d="M590,110 l18,0" stroke="#8FB8CF" stroke-width="1.5" marker-end="url(#arr)"/>
+<polygon points="701.64,113.56 680.82,116.78 680.82,103.58 701.64,100.36" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="680.82,116.78 665.58,107.98 665.58,94.78 680.82,103.58" fill="#C2B59F" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="707.22,101.54 701.64,113.56 701.64,100.36 707.22,88.34" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="701.64,100.36 680.82,103.58 665.58,94.78 671.16,82.76 691.98,79.54 707.22,88.34" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="639.18,123.22 618.36,126.44 618.36,113.24 639.18,110.02" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="618.36,126.44 603.12,117.64 603.12,104.44 618.36,113.24" fill="#C2B59F" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="644.76,111.20 639.18,123.22 639.18,110.02 644.76,98.00" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="639.18,110.02 618.36,113.24 603.12,104.44 608.69,92.42 629.52,89.20 644.76,98.00" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="675.24,128.80 654.42,132.02 654.42,118.82 675.24,115.60" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="654.42,132.02 639.18,123.22 639.18,110.02 654.42,118.82" fill="#C2B59F" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="680.82,116.78 675.24,128.80 675.24,115.60 680.82,103.58" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="675.24,115.60 654.42,118.82 639.18,110.02 644.76,98.00 665.58,94.78 680.82,103.58" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="0.9" stroke-linejoin="round" opacity="1.0"/>
+<text x="660" y="190" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="12" font-weight="650" fill="#2F8A7B" text-anchor="middle" letter-spacing="0.08em">2026</text>
+<text x="660" y="208" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">hexagonal system</text>
+<text x="660" y="223" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">brick</text>
+<text x="20" y="28" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#2F8A7B" text-anchor="start" letter-spacing="0.08em">SHAPE EVOLUTION · CONCEPT SILHOUETTES ONLY</text></svg>

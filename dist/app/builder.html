@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>SeaBrick builder · how the bricks fit together</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="builder.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="../index.html" title="SeaBrick Society"><img src="../assets/mark.svg" alt=""><span>SeaBrick <b>builder</b></span></a>
+  <nav class="scenes" aria-label="Scenes">
+    <button data-scene="catalogue">Shapes</button>
+    <button data-scene="mat" data-layers="3">Mat</button>
+    <button data-scene="tube" data-layers="3">Small tube</button>
+    <button data-scene="designer" data-preset="thickHex">Tower</button>
+    <button data-scene="designer" data-preset="lowDodec">Dodecagon</button>
+    <button data-scene="bridges" data-layers="4">Bridged</button>
+  </nav>
+  <a class="back" href="../technology.html">← Technology</a>
+  <a class="full" id="openFull" href="builder.html" target="_top">Open full builder ↗</a>
+</header>
+
+<main class="builder">
+  <aside class="panel" id="panel">
+    <h1 id="sceneTitle">Floating mat</h1>
+    <p id="sceneText"></p>
+    <p class="line" id="sceneLine"></p>
+
+    <label>Experiment
+      <select id="scene">
+        <option value="catalogue">The brick shapes</option>
+        <option value="mat">Floating mat (courses A, B, C)</option>
+        <option value="tube">Small tubes</option>
+        <option value="designer">Tube and tower designer</option>
+        <option value="bridges">Bridged courses (double-hex)</option>
+      </select>
+    </label>
+
+    <div id="catalogueControls" hidden>
+      <label>Shape
+        <select id="shape">
+          <option value="0">SeaBrick (the full brick, 6 connectors)</option>
+          <option value="1">2-lock bump</option>
+          <option value="2">2-lock thin</option>
+          <option value="3">3-lock claw (half brick)</option>
+          <option value="4">3-lock tongue (half brick)</option>
+          <option value="5">4-lock</option>
+          <option value="6">5-lock claw</option>
+          <option value="7">5-lock tongue</option>
+          <option value="8">Double-hex bridge</option>
+          <option value="9">2-flat-face</option>
+          <option value="10">Wedge insert 1 (cladding)</option>
+          <option value="11">Wedge insert 2 (cladding)</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="tubeControls" hidden>
+      <label>Tube
+        <select id="tubeSize"><option value="0">Original tube (radius 2.5)</option><option value="1">Larger tube</option></select>
+      </label>
+    </div>
+
+    <div id="designerControls" hidden>
+      <label>Example
+        <select id="preset">
+          <option value="custom">Custom settings</option>
+          <option value="wideHex">Wide hexagonal tube</option>
+          <option value="thickHex">Thick hexagonal tower</option>
+          <option value="lowDodec">Low dodecagon</option>
+          <option value="thickDodec">Thick dodecagon</option>
+          <option value="tallDodec">Tall dodecagon</option>
+          <option value="wideDodec">Wide dodecagon tower</option>
+        </select>
+      </label>
+      <div class="row">
+        <label>Shape <select id="sides"><option value="6">Hexagon</option><option value="12">Dodecagon</option></select></label>
+        <label>Radius <select id="radius"><option>2.5</option><option>3.5</option><option>4.5</option><option>6</option><option>8</option></select></label>
+        <label>Wall <select id="wall"><option>1</option><option>1.5</option><option>2</option><option>2.5</option><option>3</option><option>4</option></select></label>
+      </div>
+      <small>In brick pitches (one pitch = centre-to-centre spacing). Radius is centre to a flat wall.</small>
+    </div>
+
+    <div id="bridgeControls" hidden>
+      <label class="check"><input id="bridges" type="checkbox" checked> Show two-course double-hex bridges</label>
+    </div>
+
+    <label id="layersRow">Courses <output id="layersOut">3</output>
+      <input id="layers" type="range" min="1" max="12" value="3" step="1">
+    </label>
+    <label id="phaseRow">First course registration
+      <select id="phase"><option value="0">A</option><option value="1">B</option><option value="2">C</option></select>
+    </label>
+    <label id="stackRow" hidden>Course sequence
+      <select id="stack"><option value="abc">Compatible sequence (A → B → C)</option><option value="aligned">Repeat the first course</option></select>
+    </label>
+    <label id="explodeRow">Separate the courses
+      <input id="explode" type="range" min="0" max="2" step="0.05" value="0">
+    </label>
+    <label class="check" id="rotateRow"><input id="rotate" type="checkbox"> <span id="rotateLabel">Rotate alternate courses by 60°</span></label>
+    <label class="check" id="guidesRow" hidden><input id="guides" type="checkbox" checked> Show target wall outlines</label>
+
+    <label>Assembly <input id="assemble" type="range" min="0" max="1000" value="1000"></label>
+    <button id="play" class="primary">Watch it assemble</button>
+
+    <label>Colour
+      <select id="colour"><option value="layer">By course (A, B, C)</option><option value="type">By brick shape</option><option value="plain">Plain</option></select>
+    </label>
+    <div class="legend" id="legend"></div>
+
+    <details>
+      <summary>Display and camera</summary>
+      <label>Mesh detail <select id="detail"><option value="auto">Automatic</option><option value="full">Full</option><option value="fast">Light</option></select></label>
+      <small>Drag to orbit. Right-drag or shift-drag to pan. Scroll or pinch to zoom. Click a brick to identify it. Keys: arrows pan, + / − zoom, F fits.</small>
+    </details>
+
+    <p class="note">Bricks are shown as smoothed visualization meshes of the final SeaBrick design: the connector surfaces are not modelled. Layouts follow the tongue-to-claw lateral-lock rule checked in the design study; detailed clearance and insertion order are still under study.</p>
+  </aside>
+
+  <section class="stage">
+    <canvas id="view" tabindex="0" aria-label="Interactive SeaBrick assembly"></canvas>
+    <div class="tools">
+      <button id="iso" title="Perspective view">3D</button>
+      <button id="top" title="Top view">Top</button>
+      <button id="side" title="Side view">Side</button>
+      <button id="fitBtn" title="Fit view (F)">Fit</button>
+      <button id="snap" title="Save a PNG of the current view">Save image</button>
+    </div>
+    <div class="hud"><span id="counter"></span><span id="pickInfo"></span></div>
+    <div id="loading" class="overlay">Loading brick models…</div>
+    <div id="fallback" class="overlay" hidden></div>
+    <p id="status" class="sr"></p>
+  </section>
+</main>
+
+<script src="bricks-data.js"></script>
+<script src="builder.js"></script>
+</body>
+</html>

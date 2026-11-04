@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="500" height="300" role="img"><polygon points="310.62,195.00 227.81,207.81 227.81,155.31 310.62,142.50" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="1.3" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="227.81,207.81 167.19,172.81 167.19,120.31 227.81,155.31" fill="#C2B59F" stroke="#6B5F4F" stroke-width="1.3" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="332.81,147.19 310.62,195.00 310.62,142.50 332.81,94.69" fill="#D9CFBE" stroke="#6B5F4F" stroke-width="1.3" stroke-linejoin="round" opacity="1.0"/>
+<polygon points="310.62,142.50 227.81,155.31 167.19,120.31 189.38,72.50 272.19,59.69 332.81,94.69" fill="#F4EEE2" stroke="#6B5F4F" stroke-width="1.3" stroke-linejoin="round" opacity="1.0"/>
+<path d="M189.4,38.5 L310.6,108.5" stroke="#2F8A7B" stroke-width="1.2"/>
+<path d="M310.6,103.5 v10" stroke="#2F8A7B" stroke-width="1.2"/>
+<path d="M310.6,114.5 L310.6,138.5" stroke="#2F8A7B" stroke-width="0.8" stroke-dasharray="2 3"/>
+<path d="M189.4,33.5 v10" stroke="#2F8A7B" stroke-width="1.2"/>
+<path d="M189.4,44.5 L189.4,68.5" stroke="#2F8A7B" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="250.0" y="63.5" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#2F8A7B" text-anchor="middle" letter-spacing="0.08em">width across corners</text>
+<path d="M336.6,195.0 L336.6,142.5" stroke="#2F8A7B" stroke-width="1.2"/>
+<path d="M331.6,195.0 h10" stroke="#2F8A7B" stroke-width="1.2"/>
+<path d="M331.6,142.5 h10" stroke="#2F8A7B" stroke-width="1.2"/>
+<text x="346.6217782649107" y="172.75" font-family="Cascadia Code, Consolas, Menlo, monospace" font-size="11" font-weight="600" fill="#2F8A7B" text-anchor="start" letter-spacing="0.08em">height ≈ ½ width</text>
+<text x="250" y="290" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="11" font-weight="500" fill="#5A6B7A" text-anchor="middle" letter-spacing="0em">Simplified hexagonal brick. Connection features are intentionally omitted.</text></svg>
