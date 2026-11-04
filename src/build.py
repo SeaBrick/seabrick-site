@@ -58,7 +58,6 @@ def page(title, body, *, active="", depth=0, description="", og_image="assets/im
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} · {SITE_NAME}</title>
 <meta name="description" content="{desc}">
-<meta name="robots" content="noindex, nofollow">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{desc}">
 <meta property="og:image" content="{rel}{og_image}">
@@ -68,7 +67,6 @@ def page(title, body, *, active="", depth=0, description="", og_image="assets/im
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="preview-band">{PREVIEW_BAND}</div>
 <header class="site">
   <div class="wrap nav">
     <a class="brand" href="{rel}index.html" aria-label="SeaBrick Society home">
@@ -656,7 +654,8 @@ def build():
         out[f"journal/{s['slug']}.html"] = article(s, ordered[i - 1] if i else None, ordered[i + 1] if i + 1 < len(ordered) else None)
     for name, content in out.items():
         (DIST / name).write_text(content, encoding="utf-8")
-    (DIST / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
+    (DIST / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://seabrick.com/sitemap.xml\n", encoding="utf-8")
+    (DIST / "CNAME").write_text("seabrick.com\n", encoding="utf-8")
     print(f"built {len(out)} pages into {DIST}")
 
 
