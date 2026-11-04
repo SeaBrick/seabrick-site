@@ -635,6 +635,11 @@ def build():
         (DIST / name).write_text(content, encoding="utf-8")
     (DIST / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://seabrick.com/sitemap.xml\n", encoding="utf-8")
     (DIST / "CNAME").write_text("seabrick.com\n", encoding="utf-8")
+    (DIST / ".nojekyll").touch()
+    pages = sorted(q for q in DIST.rglob("*.html") if q.name != "404.html" and "app" not in q.relative_to(DIST).parts)
+    today = datetime.date.today().isoformat()
+    urls = "".join(f"  <url><loc>https://seabrick.com/{q.relative_to(DIST).as_posix().replace('index.html', '')}</loc><lastmod>{today}</lastmod></url>\n" for q in pages)
+    (DIST / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + '</urlset>\n', encoding="utf-8")
     print(f"built {len(out)} pages into {DIST}")
 
 
