@@ -1,4 +1,4 @@
-# SeaBrick Society website (local draft, November 2026)
+# SeaBrick Society website, version 4 (local draft, 4 November 2026)
 
 A static website for SeaBrick Society, positioned as a nonprofit research society working on floating
 infrastructure for climate adaptation and mitigation, with an interactive builder and a design-evolution page
@@ -7,10 +7,10 @@ built from the real brick models.
 ## View it
 
 ```bash
-python -m http.server 8765 --bind 127.0.0.1 --directory dist
+python -m http.server 8771 --bind 127.0.0.1 --directory dist
 ```
 
-then open http://127.0.0.1:8765/ . Serve only `dist`. Opening `dist/index.html` from disk also works, except that
+then open http://127.0.0.1:8771/ . Serve only `dist`. Opening `dist/index.html` from disk also works, except that
 the embedded builder and connection lab frames need a server in some browsers.
 
 ## Edit it
@@ -20,6 +20,9 @@ the embedded builder and connection lab frames need a server in some browsers.
 | `src/build.py` | page layouts and main copy (home, mission, technology, builder, connection lab, evolution, story, society, contact) |
 | `src/evolution.py` | the design eras on the evolution page and which library entries illustrate them |
 | `src/stories.py` | the ten journal articles |
+| `src/media.py` | the Drive walkthrough videos and the old photographs on the evolution page |
+| `dist/assets/fonts/`, `dist/assets/art/` | Noto Sans (WOFF2, OFL) and the two Tidal Paper watercolours (WebP) |
+| `COPY.md` | every page's text, for the writing agent's review |
 | `src/artwork.py` | remaining SVG art (icons, wave divider, materials strip) |
 | `dist/assets/site.css`, `site-additions.css`, `site.js` | styling, mobile menu, technology tabs, journal filters |
 | `dist/app/builder.html`, `builder.js`, `builder.css` | the interactive builder |

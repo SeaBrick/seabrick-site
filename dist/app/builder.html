@@ -29,6 +29,13 @@
     <p id="sceneText"></p>
     <p class="line" id="sceneLine"></p>
 
+    <div class="examples" role="group" aria-label="Examples">
+      <button type="button" data-scene="mat" data-layers="3">A mat</button>
+      <button type="button" data-scene="tube" data-layers="3">A small tube</button>
+      <button type="button" data-scene="designer" data-preset="thickHex">A tower</button>
+      <button type="button" data-scene="bridges" data-layers="4">Bridged courses</button>
+      <button type="button" data-scene="catalogue">The shapes</button>
+    </div>
     <label>Experiment
       <select id="scene">
         <option value="catalogue">The brick shapes</option>
@@ -91,7 +98,7 @@
     <label id="layersRow">Courses <output id="layersOut">3</output>
       <input id="layers" type="range" min="1" max="12" value="3" step="1">
     </label>
-    <label id="phaseRow">First course registration
+    <label id="phaseRow">First course offset
       <select id="phase"><option value="0">A</option><option value="1">B</option><option value="2">C</option></select>
     </label>
     <label id="stackRow" hidden>Course sequence

@@ -11,6 +11,8 @@
   if (embed) document.body.classList.add('embed');
   if (params.get('bar') === '0') document.body.classList.add('nobar');
   if (params.get('panel') === '1') document.body.classList.add('withpanel');
+  if (params.get('hero') === '1') document.body.classList.add('hero');
+  let autoSpin = params.get('spin') === '1';
 
   /* ---------- palette ---------- */
   const hex = h => h.replace('#', '').match(/../g).map(x => parseInt(x, 16) / 255);
@@ -171,7 +173,7 @@
     for (const p of ins) { const [a, b] = meshes[p.mesh].bounds, c = Math.cos(p.turn), s = Math.sin(p.turn); for (let bits = 0; bits < 8; bits++) { let x = bits & 1 ? b[0] : a[0], y = bits & 2 ? b[1] : a[1], z = bits & 4 ? b[2] : a[2]; if (p.flip) { y = D.flipY - y; z = -z; } const v = [c * x - s * z + p.pos[0], y + p.pos[1], s * x + c * z + p.pos[2]]; for (let j = 0; j < 3; j++) { lo[j] = Math.min(lo[j], v[j]); hi[j] = Math.max(hi[j], v[j]); } } }
     cam.target = lo.map((v, i) => (v + hi[i]) / 2); cam.centre = [...cam.target];
     cam.radius = Math.max(0.5, Math.hypot(...hi.map((v, i) => (v - lo[i]) / 2)));
-    cam.dist = 0.98 * cam.radius / Math.sin(0.3); needFit = false;
+    cam.dist = (document.body.classList.contains('hero') ? 0.62 : 0.98) * cam.radius / Math.sin(0.3); needFit = false;
   }
   function pan(dx, dy) { const { x, y } = axes(), r = canvas.getBoundingClientRect(), k = 2 * cam.dist * Math.tan(0.3) / Math.max(1, Math.min(r.width, r.height)); cam.target = cam.target.map((v, i) => v + (-x[i] * dx + y[i] * dy) * k); dirty = true; }
   function dolly(a) { cam.dist = Math.min(cam.radius * 40, Math.max(cam.radius * 0.05, cam.dist * Math.exp(Math.max(-2, Math.min(2, a))))); dirty = true; }
@@ -222,13 +224,14 @@
     if (!pick) {
       const lines = guideLines();
       if (lines.length) { gl.useProgram(lineProg); gl.uniformMatrix4fv(LU.vp, false, vp); gl.uniform4f(LU.col, 0, 0.33, 0.57, 0.8); gl.bindVertexArray(lineVao); gl.bindBuffer(gl.ARRAY_BUFFER, lineBuf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(lines), gl.DYNAMIC_DRAW); gl.drawArrays(gl.LINES, 0, lines.length / 3); }
-      $('counter').textContent = `${visibleCount.toLocaleString()} of ${current.length.toLocaleString()} bricks · ${(tris / 1e6).toFixed(1)} M triangles · ${fast ? 'light' : 'full'} mesh`;
+      $('counter').textContent = `${visibleCount.toLocaleString()} of ${current.length.toLocaleString()} bricks` + (S.detail !== 'auto' ? ` · ${(tris / 1e6).toFixed(1)} M triangles · ${fast ? 'light' : 'full'} mesh` : '');
     }
   }
   function frame(t) {
     const r = canvas.getBoundingClientRect(), ratio = Math.min(window.devicePixelRatio || 1, 2), w = Math.max(1, Math.round(r.width * ratio)), h = Math.max(1, Math.round(r.height * ratio));
     if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; dirty = true; }
     if (S.playing) { S.assemble = Math.min(1, S.assemble + 0.6 / Math.max(10, current.length) * (current.length > 400 ? 6 : current.length > 100 ? 3 : 1)); $('assemble').value = Math.round(S.assemble * 1000); if (S.assemble >= 1) { S.playing = false; $('play').textContent = 'Replay assembly'; } dirty = true; }
+    if (autoSpin) { cam.yaw += 0.0035; dirty = true; }
     if (dirty) { render(false); dirty = false; }
     requestAnimationFrame(frame);
   }
@@ -244,7 +247,7 @@
 
   /* ---------- UI ---------- */
   const SCENES = {
-    mat: { title: 'Floating mat', text: 'A 19-brick hexagonal mat. Each course sits in one of three registrations (A, B, C) so that bricks in one course bridge the joints below. Separate the courses to see the offset; rotate alternate courses to swap the two offset families. The perimeter is left open on purpose.' },
+    mat: { title: 'Floating mat', text: 'A 19-brick hexagonal mat. Each course sits in one of three offsets, called A, B and C, so that bricks in one course bridge the joints below. Separate the courses to see the offset; rotate alternate courses to swap the two offset families. The perimeter is left open on purpose.' },
     tube: { title: 'Small tubes', text: 'The smallest closed rings. Half bricks (3-lock claw and tongue) and edge bricks (4- and 5-lock) close the ring so that every internal tongue meets a claw. Flat faces appear only on the real inner and outer walls.' },
     designer: { title: 'Tube and tower designer', text: 'Larger rings and towers assembled from the ten reversible shapes. Hexagonal tubes use straight runs between six corners; dodecagons use two wall families and are slightly irregular. Gold marks wall features; orange marks upright wedge cladding at the boundary. Compatible course sequences are listed below the model.' },
     bridges: { title: 'Bridged courses', text: 'A four-course hexagonal ring in which double-hex bricks span two courses, tying them together. Turn the bridges off to separate the courses.' },
@@ -255,7 +258,7 @@
     let line = '';
     if (S.scene === 'designer' && designerCase()) { const c = designerCase(); line = `${c.sides === 6 ? 'Hexagon' : 'Dodecagon'} · ${S.layers} course${S.layers > 1 ? 's' : ''} · outer width ${c.actualOuter.map(v => (2 * v).toFixed(1)).join('–')} pitches · opening ${c.actualInner.map(v => (2 * v).toFixed(1)).join('–')} pitches · course sequence ${c.phaseSequence.map(p => 'ABC'[p]).join(' → ')}`; }
     else if (S.scene === 'tube') { const c = D.boundarySizes[S.tubeSize]; line = `${c.label} · outer radius ${c.radius} pitches · wall ${c.wall} pitches · ${S.layers} course${S.layers > 1 ? 's' : ''}`; }
-    else if (S.scene === 'mat') line = `${S.layers} course${S.layers > 1 ? 's' : ''} · registration ${'ABC'[S.phase]} first · 19 bricks per course`;
+    else if (S.scene === 'mat') line = `${S.layers} course${S.layers > 1 ? 's' : ''} · offset ${'ABC'[S.phase]} first · 19 bricks per course`;
     else if (S.scene === 'bridges') line = `${S.layers} course${S.layers > 1 ? 's' : ''} · ${S.bridges ? 'with' : 'without'} double-hex bridges`;
     else if (S.scene === 'catalogue') { const m = D.meshes[S.shape]; line = `${m.label}: ${m.role}.`; }
     $('sceneLine').textContent = line;
@@ -310,15 +313,20 @@
 
   /* pointer navigation */
   const pointers = new Map(); let downAt = null;
-  canvas.onpointerdown = e => { if (e.button > 2) return; e.preventDefault(); canvas.focus({ preventScroll: true }); pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, mode: e.shiftKey || e.button !== 0 ? 'pan' : 'orbit' }); canvas.setPointerCapture(e.pointerId); downAt = [e.clientX, e.clientY, performance.now()]; };
+  canvas.onpointerdown = e => { autoSpin = false; if (e.button > 2) return; e.preventDefault(); canvas.focus({ preventScroll: true }); pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, mode: e.shiftKey || e.button !== 0 ? 'pan' : 'orbit' }); canvas.setPointerCapture(e.pointerId); downAt = [e.clientX, e.clientY, performance.now()]; };
   canvas.onpointermove = e => { if (!pointers.has(e.pointerId)) return; e.preventDefault(); const old = [...pointers.values()], p = pointers.get(e.pointerId), dx = e.clientX - p.x, dy = e.clientY - p.y; pointers.set(e.pointerId, { ...p, x: e.clientX, y: e.clientY }); if (pointers.size === 2) { const nx = [...pointers.values()], mid = v => [(v[0].x + v[1].x) / 2, (v[0].y + v[1].y) / 2], len = v => Math.hypot(v[0].x - v[1].x, v[0].y - v[1].y), a = mid(old), b = mid(nx); pan(b[0] - a[0], b[1] - a[1]); if (len(old) > 1 && len(nx) > 1) dolly(Math.log(len(old) / len(nx))); } else if (p.mode === 'pan') pan(dx, dy); else orbit(dx, dy); };
   canvas.onpointerup = e => { pointers.delete(e.pointerId); if (canvas.hasPointerCapture(e.pointerId)) canvas.releasePointerCapture(e.pointerId); if (downAt && Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) < 4 && performance.now() - downAt[2] < 400 && e.button === 0) { const p = pickAt(e.clientX, e.clientY); S.selected = p ? p.id : -1; $('pickInfo').textContent = p ? `${D.meshes[p.mesh].label} · course ${p.layer + 1}${p.phase !== undefined ? ' (' + 'ABC'[p.phase] + ')' : ''}${p.flip ? ' · turned over' : ''}${p.cladding ? ' · cladding' : ''}${p.span === 2 ? ' · spans two courses' : ''}. ${D.meshes[p.mesh].role}.` : ''; dirty = true; } downAt = null; };
   canvas.onpointercancel = canvas.onpointerup; canvas.oncontextmenu = e => e.preventDefault();
-  canvas.onwheel = e => { e.preventDefault(); dolly(e.deltaY * (e.deltaMode === 1 ? 16 : 1) * 0.0012); };
+  canvas.onwheel = e => { autoSpin = false; e.preventDefault(); dolly(e.deltaY * (e.deltaMode === 1 ? 16 : 1) * 0.0012); };
   canvas.onkeydown = e => { const k = e.key; const step = e.shiftKey ? 80 : 30; if (k === 'ArrowLeft') pan(-step, 0); else if (k === 'ArrowRight') pan(step, 0); else if (k === 'ArrowUp') pan(0, -step); else if (k === 'ArrowDown') pan(0, step); else if (k === '+' || k === '=') dolly(-0.15); else if (k === '-') dolly(0.15); else if (k === 'f' || k === 'F') $('fitBtn').click(); else return; e.preventDefault(); };
 
   window.seabrickBuilder = { state: S, set(k, v) { S[k] = v; change(k); }, count: () => current.length };
   lastScene = ''; change('scene'); if (params.get('play') === '1') $('play').click();
   requestAnimationFrame(frame);
   $('loading').hidden = true;
+  // tell a parent page how tall this document is, so a phone layout can avoid a nested scroll
+  if (window.parent !== window) {
+    const post = () => parent.postMessage({ seabrickHeight: document.documentElement.scrollHeight, narrow: window.innerWidth < 820 }, '*');
+    new ResizeObserver(post).observe(document.body); window.addEventListener('resize', post); setTimeout(post, 300);
+  }
 })();

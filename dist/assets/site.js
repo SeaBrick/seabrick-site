@@ -52,3 +52,36 @@
     });
   }
 })();
+
+// builder frames report their height on phones, so controls run in the page's own scroll
+window.addEventListener('message', function (e) {
+  if (!e.data || !e.data.seabrickHeight) return;
+  document.querySelectorAll('.embed iframe').forEach(function (f) {
+    if (f.contentWindow === e.source && window.innerWidth < 820 && e.data.narrow) f.style.height = Math.min(4000, e.data.seabrickHeight) + 'px';
+  });
+});
+
+// three-state picture on the home page
+document.querySelectorAll('.threestate').forEach(function (fig) {
+  fig.querySelectorAll('.states button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      fig.querySelectorAll('img').forEach(function (im) { im.classList.toggle('on', im.dataset.state === b.dataset.state); });
+      fig.querySelectorAll('.states button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    });
+  });
+});
+
+// the connection lab is shown unchanged inside its frame; its own header and footer are hidden so the page has one header
+(function () {
+  var f = document.getElementById('labframe');
+  if (!f) return;
+  function tidy() {
+    try {
+      var d = f.contentDocument; if (!d) return;
+      var s = d.createElement('style');
+      s.textContent = 'header.site-header,footer,.demo-notice{display:none!important}body{padding-top:0!important}';
+      d.head.appendChild(s);
+    } catch (e) { /* cross-origin: leave as is */ }
+  }
+  f.addEventListener('load', tidy); if (f.contentDocument && f.contentDocument.readyState === 'complete') tidy();
+})();
